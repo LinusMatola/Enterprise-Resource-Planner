@@ -1,0 +1,2655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/portal" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/portal" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/portal" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="FnChangePassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="oPassword" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="hOPassword" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangePassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangedPassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangedPassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCreateUser">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="idnumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCreateUser_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnLogin">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="username" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnLogin_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApprovals">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="userId" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApprovals_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnAccounts">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="deposits" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="shares" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="outstandingLoans" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnAccounts_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="deposits" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="shares" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="outstandingLoans" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApproveData">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="uSerID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApproveData_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnReject">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="uSerID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnReject_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnDelegate">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="uSerID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnDelegate_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnapprovalEach">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="iD" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnapprovalEach_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnGeneratePaymentVoucher">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="no" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnGeneratePaymentVoucher_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApprovePv">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="uSerID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="comment" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApprovePv_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnRejectPv">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="uSerID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnRejectPv_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="SMSMessage">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="documentNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accfrom" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="phone" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="message" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SMSMessage_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="SendEmail">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="toEmail" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emailSubject" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emailBody" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendEmail_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnCreateImprest">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="member_No" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCreateImprest_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnImprestApplication">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="imprestAccount" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bankAcc" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="payinfAcc" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="days" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="totalNet" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="activityCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="branchCode" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnImprestApplication_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnImprestApplicationModify">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="member" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="imprestAccount" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="bankAcc" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="payinfAcc" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="days" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="totalNet" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="generatedApplicationNo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnImprestApplicationModify_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnImprestLinesAppModify">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="bosaNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="purpose" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnImprestLinesAppModify_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnImprestLinesApp">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="bosaNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="purpose" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="accName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="activityCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="branchCode" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnImprestLinesApp_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRLeaveAppInsert">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="names" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="leaveType" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="daysApplied" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="returnDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="applicationDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="status" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="endDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="applicantComments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="responsibilityCenter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="request_Leave_Allowance" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="releiverId" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="releiverName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRLeaveAppInsert_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRLeaveAppModify">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="daysApplied" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="returnDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="documentNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="approverID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRLeaveAppModify_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="NewHRLeaveAppModify">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="names" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="leaveType" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="daysApplied" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="returnDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="applicationDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="status" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="endDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="applicantComments" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="responsibilityCenter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="request_Leave_Allowance" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="documentNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="poNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="NewHRLeaveAppModify_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRLeaveAppModifyDuringApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="daysApplied" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="documentNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="HRLeaveAppModifyDuringApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="SendLeaveForApproval">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendLeaveForApproval_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ApproveDocument">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="documentNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="approverID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="entryNo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ApproveDocument_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetRecordIDToApprove">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="entryNo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetRecordIDToApprove_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RejectDocument">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="documentNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="approverID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="recIDText" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="entryNo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RejectDocument_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FetchEmployeeNoByUserID">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FetchEmployeeNoByUserID_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FetchRecordID_To_Approve_HR">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicationCode" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FetchRecordID_To_Approve_HR_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CancelDocumentLeaveRequest">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="documentNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CancelDocumentLeaveRequest_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="UploadDocumentLeave">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="documentNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="uRL1" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="descriprion" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="company" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UploadDocumentLeave_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GeneratePayslipReport">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="period" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="filenameFromApp" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="varPeriod" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GeneratePayslipReport_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetSupervisorEmpNo">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetSupervisorEmpNo_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetUserFullName">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetUserFullName_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetUserIDByEmpNo">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetUserIDByEmpNo_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CalcReturnDate">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="lVStartDate" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="lVDaysApplied" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CalcReturnDate_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GenerateP9Report">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="selectedYear" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="filenameFromApp" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GenerateP9Report_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="VerifyIntegerAsBoolean">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="intElement" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="VerifyIntegerAsBoolean_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UpdateLeaveSenderId">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="docNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="senderID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UpdateLeaveSenderId_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="RejectLeaveDocument">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="documentNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="approverID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="RejectLeaveDocument_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetGrade">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emplNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetGrade_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="IsStartDateValid">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="startDate" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="IsStartDateValid_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnApplicationNo">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicantNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="today" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnApplicationNo_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="LeaveTypeForReimbursment">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicantNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="today" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="LeaveTypeForReimbursment_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="NumberOfDays">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicantNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="today" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="NumberOfDays_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnStartDate">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicantNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="today" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnStartDate_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnEndDate">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicantNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="today" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnEndDate_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="IsTherePendingLeave">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="appno" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="IsTherePendingLeave_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="IsThereActiveLeave">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applicantNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="today" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="IsThereActiveLeave_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnDocWithNewStatus">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="applNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnDocWithNewStatus_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CancelApprovalEntry">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="docNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CancelApprovalEntry_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="DeleteRelieverEntry">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="docNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DeleteRelieverEntry_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="UpdateLeaveApplicationStatus">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="docNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="UpdateLeaveApplicationStatus_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="ReturnCountyName">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="code" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReturnCountyName_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FullName">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emploNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FullName_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="EmployeePhoto">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="staffNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="picture" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="EmployeePhoto_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="picture" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendToReliever">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="leaveNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SendToReliever_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="CheckLeaveDaysAvailable">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="leaveType" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="empNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CheckLeaveDaysAvailable_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnStaffInfo">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="staffNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnStaffInfo_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetUserByUserID">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="userID" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetUserByUserID_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetAllEmployeeNames">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetAllEmployeeNames_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetLeaveTypes">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="employeeGender" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetLeaveTypes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetSupervisorName">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="supervisorId" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetSupervisorName_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetSupervisorEmail">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="supervisorId" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetSupervisorEmail_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetActivityCode">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetActivityCode_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetActivityCodeUsingName">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="activityName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetActivityCodeUsingName_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetBranchCode">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetBranchCode_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetBranchCodeUsingName">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="branchName" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetBranchCodeUsingName_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetAllCustomers">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetAllCustomers_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetAllVendors">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="searchValue" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetAllVendors_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetAllBankAccounts">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetAllBankAccounts_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetAllGLAccounts">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="gLType" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetAllGLAccounts_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetLocation">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetLocation_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnUpdatePassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="idNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="newPassword" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnUpdatePassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangePasswordNew">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="curentPass" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="newPass" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangePasswordNew_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApplicationStatus">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="userId" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApplicationStatus_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnNewPass">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="currentPass" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="newPass" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnNewPass_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="FnChangePassword">
+    <part name="parameters" element="tns:FnChangePassword" />
+  </message>
+  <message name="FnChangePassword_Result">
+    <part name="parameters" element="tns:FnChangePassword_Result" />
+  </message>
+  <message name="FnChangedPassword">
+    <part name="parameters" element="tns:FnChangedPassword" />
+  </message>
+  <message name="FnChangedPassword_Result">
+    <part name="parameters" element="tns:FnChangedPassword_Result" />
+  </message>
+  <message name="FnCreateUser">
+    <part name="parameters" element="tns:FnCreateUser" />
+  </message>
+  <message name="FnCreateUser_Result">
+    <part name="parameters" element="tns:FnCreateUser_Result" />
+  </message>
+  <message name="FnLogin">
+    <part name="parameters" element="tns:FnLogin" />
+  </message>
+  <message name="FnLogin_Result">
+    <part name="parameters" element="tns:FnLogin_Result" />
+  </message>
+  <message name="FnApprovals">
+    <part name="parameters" element="tns:FnApprovals" />
+  </message>
+  <message name="FnApprovals_Result">
+    <part name="parameters" element="tns:FnApprovals_Result" />
+  </message>
+  <message name="FnAccounts">
+    <part name="parameters" element="tns:FnAccounts" />
+  </message>
+  <message name="FnAccounts_Result">
+    <part name="parameters" element="tns:FnAccounts_Result" />
+  </message>
+  <message name="FnApproveData">
+    <part name="parameters" element="tns:FnApproveData" />
+  </message>
+  <message name="FnApproveData_Result">
+    <part name="parameters" element="tns:FnApproveData_Result" />
+  </message>
+  <message name="FnReject">
+    <part name="parameters" element="tns:FnReject" />
+  </message>
+  <message name="FnReject_Result">
+    <part name="parameters" element="tns:FnReject_Result" />
+  </message>
+  <message name="FnDelegate">
+    <part name="parameters" element="tns:FnDelegate" />
+  </message>
+  <message name="FnDelegate_Result">
+    <part name="parameters" element="tns:FnDelegate_Result" />
+  </message>
+  <message name="FnapprovalEach">
+    <part name="parameters" element="tns:FnapprovalEach" />
+  </message>
+  <message name="FnapprovalEach_Result">
+    <part name="parameters" element="tns:FnapprovalEach_Result" />
+  </message>
+  <message name="FnGeneratePaymentVoucher">
+    <part name="parameters" element="tns:FnGeneratePaymentVoucher" />
+  </message>
+  <message name="FnGeneratePaymentVoucher_Result">
+    <part name="parameters" element="tns:FnGeneratePaymentVoucher_Result" />
+  </message>
+  <message name="FnApprovePv">
+    <part name="parameters" element="tns:FnApprovePv" />
+  </message>
+  <message name="FnApprovePv_Result">
+    <part name="parameters" element="tns:FnApprovePv_Result" />
+  </message>
+  <message name="FnRejectPv">
+    <part name="parameters" element="tns:FnRejectPv" />
+  </message>
+  <message name="FnRejectPv_Result">
+    <part name="parameters" element="tns:FnRejectPv_Result" />
+  </message>
+  <message name="SMSMessage">
+    <part name="parameters" element="tns:SMSMessage" />
+  </message>
+  <message name="SMSMessage_Result">
+    <part name="parameters" element="tns:SMSMessage_Result" />
+  </message>
+  <message name="SendEmail">
+    <part name="parameters" element="tns:SendEmail" />
+  </message>
+  <message name="SendEmail_Result">
+    <part name="parameters" element="tns:SendEmail_Result" />
+  </message>
+  <message name="FnCreateImprest">
+    <part name="parameters" element="tns:FnCreateImprest" />
+  </message>
+  <message name="FnCreateImprest_Result">
+    <part name="parameters" element="tns:FnCreateImprest_Result" />
+  </message>
+  <message name="FnImprestApplication">
+    <part name="parameters" element="tns:FnImprestApplication" />
+  </message>
+  <message name="FnImprestApplication_Result">
+    <part name="parameters" element="tns:FnImprestApplication_Result" />
+  </message>
+  <message name="FnImprestApplicationModify">
+    <part name="parameters" element="tns:FnImprestApplicationModify" />
+  </message>
+  <message name="FnImprestApplicationModify_Result">
+    <part name="parameters" element="tns:FnImprestApplicationModify_Result" />
+  </message>
+  <message name="FnImprestLinesAppModify">
+    <part name="parameters" element="tns:FnImprestLinesAppModify" />
+  </message>
+  <message name="FnImprestLinesAppModify_Result">
+    <part name="parameters" element="tns:FnImprestLinesAppModify_Result" />
+  </message>
+  <message name="FnImprestLinesApp">
+    <part name="parameters" element="tns:FnImprestLinesApp" />
+  </message>
+  <message name="FnImprestLinesApp_Result">
+    <part name="parameters" element="tns:FnImprestLinesApp_Result" />
+  </message>
+  <message name="HRLeaveAppInsert">
+    <part name="parameters" element="tns:HRLeaveAppInsert" />
+  </message>
+  <message name="HRLeaveAppInsert_Result">
+    <part name="parameters" element="tns:HRLeaveAppInsert_Result" />
+  </message>
+  <message name="HRLeaveAppModify">
+    <part name="parameters" element="tns:HRLeaveAppModify" />
+  </message>
+  <message name="HRLeaveAppModify_Result">
+    <part name="parameters" element="tns:HRLeaveAppModify_Result" />
+  </message>
+  <message name="NewHRLeaveAppModify">
+    <part name="parameters" element="tns:NewHRLeaveAppModify" />
+  </message>
+  <message name="NewHRLeaveAppModify_Result">
+    <part name="parameters" element="tns:NewHRLeaveAppModify_Result" />
+  </message>
+  <message name="HRLeaveAppModifyDuringApproval">
+    <part name="parameters" element="tns:HRLeaveAppModifyDuringApproval" />
+  </message>
+  <message name="HRLeaveAppModifyDuringApproval_Result">
+    <part name="parameters" element="tns:HRLeaveAppModifyDuringApproval_Result" />
+  </message>
+  <message name="SendLeaveForApproval">
+    <part name="parameters" element="tns:SendLeaveForApproval" />
+  </message>
+  <message name="SendLeaveForApproval_Result">
+    <part name="parameters" element="tns:SendLeaveForApproval_Result" />
+  </message>
+  <message name="ApproveDocument">
+    <part name="parameters" element="tns:ApproveDocument" />
+  </message>
+  <message name="ApproveDocument_Result">
+    <part name="parameters" element="tns:ApproveDocument_Result" />
+  </message>
+  <message name="GetRecordIDToApprove">
+    <part name="parameters" element="tns:GetRecordIDToApprove" />
+  </message>
+  <message name="GetRecordIDToApprove_Result">
+    <part name="parameters" element="tns:GetRecordIDToApprove_Result" />
+  </message>
+  <message name="RejectDocument">
+    <part name="parameters" element="tns:RejectDocument" />
+  </message>
+  <message name="RejectDocument_Result">
+    <part name="parameters" element="tns:RejectDocument_Result" />
+  </message>
+  <message name="FetchEmployeeNoByUserID">
+    <part name="parameters" element="tns:FetchEmployeeNoByUserID" />
+  </message>
+  <message name="FetchEmployeeNoByUserID_Result">
+    <part name="parameters" element="tns:FetchEmployeeNoByUserID_Result" />
+  </message>
+  <message name="FetchRecordID_To_Approve_HR">
+    <part name="parameters" element="tns:FetchRecordID_To_Approve_HR" />
+  </message>
+  <message name="FetchRecordID_To_Approve_HR_Result">
+    <part name="parameters" element="tns:FetchRecordID_To_Approve_HR_Result" />
+  </message>
+  <message name="CancelDocumentLeaveRequest">
+    <part name="parameters" element="tns:CancelDocumentLeaveRequest" />
+  </message>
+  <message name="CancelDocumentLeaveRequest_Result">
+    <part name="parameters" element="tns:CancelDocumentLeaveRequest_Result" />
+  </message>
+  <message name="UploadDocumentLeave">
+    <part name="parameters" element="tns:UploadDocumentLeave" />
+  </message>
+  <message name="UploadDocumentLeave_Result">
+    <part name="parameters" element="tns:UploadDocumentLeave_Result" />
+  </message>
+  <message name="GeneratePayslipReport">
+    <part name="parameters" element="tns:GeneratePayslipReport" />
+  </message>
+  <message name="GeneratePayslipReport_Result">
+    <part name="parameters" element="tns:GeneratePayslipReport_Result" />
+  </message>
+  <message name="GetSupervisorEmpNo">
+    <part name="parameters" element="tns:GetSupervisorEmpNo" />
+  </message>
+  <message name="GetSupervisorEmpNo_Result">
+    <part name="parameters" element="tns:GetSupervisorEmpNo_Result" />
+  </message>
+  <message name="GetUserFullName">
+    <part name="parameters" element="tns:GetUserFullName" />
+  </message>
+  <message name="GetUserFullName_Result">
+    <part name="parameters" element="tns:GetUserFullName_Result" />
+  </message>
+  <message name="GetUserIDByEmpNo">
+    <part name="parameters" element="tns:GetUserIDByEmpNo" />
+  </message>
+  <message name="GetUserIDByEmpNo_Result">
+    <part name="parameters" element="tns:GetUserIDByEmpNo_Result" />
+  </message>
+  <message name="CalcReturnDate">
+    <part name="parameters" element="tns:CalcReturnDate" />
+  </message>
+  <message name="CalcReturnDate_Result">
+    <part name="parameters" element="tns:CalcReturnDate_Result" />
+  </message>
+  <message name="GenerateP9Report">
+    <part name="parameters" element="tns:GenerateP9Report" />
+  </message>
+  <message name="GenerateP9Report_Result">
+    <part name="parameters" element="tns:GenerateP9Report_Result" />
+  </message>
+  <message name="VerifyIntegerAsBoolean">
+    <part name="parameters" element="tns:VerifyIntegerAsBoolean" />
+  </message>
+  <message name="VerifyIntegerAsBoolean_Result">
+    <part name="parameters" element="tns:VerifyIntegerAsBoolean_Result" />
+  </message>
+  <message name="UpdateLeaveSenderId">
+    <part name="parameters" element="tns:UpdateLeaveSenderId" />
+  </message>
+  <message name="UpdateLeaveSenderId_Result">
+    <part name="parameters" element="tns:UpdateLeaveSenderId_Result" />
+  </message>
+  <message name="RejectLeaveDocument">
+    <part name="parameters" element="tns:RejectLeaveDocument" />
+  </message>
+  <message name="RejectLeaveDocument_Result">
+    <part name="parameters" element="tns:RejectLeaveDocument_Result" />
+  </message>
+  <message name="GetGrade">
+    <part name="parameters" element="tns:GetGrade" />
+  </message>
+  <message name="GetGrade_Result">
+    <part name="parameters" element="tns:GetGrade_Result" />
+  </message>
+  <message name="IsStartDateValid">
+    <part name="parameters" element="tns:IsStartDateValid" />
+  </message>
+  <message name="IsStartDateValid_Result">
+    <part name="parameters" element="tns:IsStartDateValid_Result" />
+  </message>
+  <message name="ReturnApplicationNo">
+    <part name="parameters" element="tns:ReturnApplicationNo" />
+  </message>
+  <message name="ReturnApplicationNo_Result">
+    <part name="parameters" element="tns:ReturnApplicationNo_Result" />
+  </message>
+  <message name="LeaveTypeForReimbursment">
+    <part name="parameters" element="tns:LeaveTypeForReimbursment" />
+  </message>
+  <message name="LeaveTypeForReimbursment_Result">
+    <part name="parameters" element="tns:LeaveTypeForReimbursment_Result" />
+  </message>
+  <message name="NumberOfDays">
+    <part name="parameters" element="tns:NumberOfDays" />
+  </message>
+  <message name="NumberOfDays_Result">
+    <part name="parameters" element="tns:NumberOfDays_Result" />
+  </message>
+  <message name="ReturnStartDate">
+    <part name="parameters" element="tns:ReturnStartDate" />
+  </message>
+  <message name="ReturnStartDate_Result">
+    <part name="parameters" element="tns:ReturnStartDate_Result" />
+  </message>
+  <message name="ReturnEndDate">
+    <part name="parameters" element="tns:ReturnEndDate" />
+  </message>
+  <message name="ReturnEndDate_Result">
+    <part name="parameters" element="tns:ReturnEndDate_Result" />
+  </message>
+  <message name="IsTherePendingLeave">
+    <part name="parameters" element="tns:IsTherePendingLeave" />
+  </message>
+  <message name="IsTherePendingLeave_Result">
+    <part name="parameters" element="tns:IsTherePendingLeave_Result" />
+  </message>
+  <message name="IsThereActiveLeave">
+    <part name="parameters" element="tns:IsThereActiveLeave" />
+  </message>
+  <message name="IsThereActiveLeave_Result">
+    <part name="parameters" element="tns:IsThereActiveLeave_Result" />
+  </message>
+  <message name="ReturnDocWithNewStatus">
+    <part name="parameters" element="tns:ReturnDocWithNewStatus" />
+  </message>
+  <message name="ReturnDocWithNewStatus_Result">
+    <part name="parameters" element="tns:ReturnDocWithNewStatus_Result" />
+  </message>
+  <message name="CancelApprovalEntry">
+    <part name="parameters" element="tns:CancelApprovalEntry" />
+  </message>
+  <message name="CancelApprovalEntry_Result">
+    <part name="parameters" element="tns:CancelApprovalEntry_Result" />
+  </message>
+  <message name="DeleteRelieverEntry">
+    <part name="parameters" element="tns:DeleteRelieverEntry" />
+  </message>
+  <message name="DeleteRelieverEntry_Result">
+    <part name="parameters" element="tns:DeleteRelieverEntry_Result" />
+  </message>
+  <message name="UpdateLeaveApplicationStatus">
+    <part name="parameters" element="tns:UpdateLeaveApplicationStatus" />
+  </message>
+  <message name="UpdateLeaveApplicationStatus_Result">
+    <part name="parameters" element="tns:UpdateLeaveApplicationStatus_Result" />
+  </message>
+  <message name="ReturnCountyName">
+    <part name="parameters" element="tns:ReturnCountyName" />
+  </message>
+  <message name="ReturnCountyName_Result">
+    <part name="parameters" element="tns:ReturnCountyName_Result" />
+  </message>
+  <message name="FullName">
+    <part name="parameters" element="tns:FullName" />
+  </message>
+  <message name="FullName_Result">
+    <part name="parameters" element="tns:FullName_Result" />
+  </message>
+  <message name="EmployeePhoto">
+    <part name="parameters" element="tns:EmployeePhoto" />
+  </message>
+  <message name="EmployeePhoto_Result">
+    <part name="parameters" element="tns:EmployeePhoto_Result" />
+  </message>
+  <message name="SendToReliever">
+    <part name="parameters" element="tns:SendToReliever" />
+  </message>
+  <message name="SendToReliever_Result">
+    <part name="parameters" element="tns:SendToReliever_Result" />
+  </message>
+  <message name="CheckLeaveDaysAvailable">
+    <part name="parameters" element="tns:CheckLeaveDaysAvailable" />
+  </message>
+  <message name="CheckLeaveDaysAvailable_Result">
+    <part name="parameters" element="tns:CheckLeaveDaysAvailable_Result" />
+  </message>
+  <message name="FnStaffInfo">
+    <part name="parameters" element="tns:FnStaffInfo" />
+  </message>
+  <message name="FnStaffInfo_Result">
+    <part name="parameters" element="tns:FnStaffInfo_Result" />
+  </message>
+  <message name="GetUserByUserID">
+    <part name="parameters" element="tns:GetUserByUserID" />
+  </message>
+  <message name="GetUserByUserID_Result">
+    <part name="parameters" element="tns:GetUserByUserID_Result" />
+  </message>
+  <message name="GetAllEmployeeNames">
+    <part name="parameters" element="tns:GetAllEmployeeNames" />
+  </message>
+  <message name="GetAllEmployeeNames_Result">
+    <part name="parameters" element="tns:GetAllEmployeeNames_Result" />
+  </message>
+  <message name="GetLeaveTypes">
+    <part name="parameters" element="tns:GetLeaveTypes" />
+  </message>
+  <message name="GetLeaveTypes_Result">
+    <part name="parameters" element="tns:GetLeaveTypes_Result" />
+  </message>
+  <message name="GetSupervisorName">
+    <part name="parameters" element="tns:GetSupervisorName" />
+  </message>
+  <message name="GetSupervisorName_Result">
+    <part name="parameters" element="tns:GetSupervisorName_Result" />
+  </message>
+  <message name="GetSupervisorEmail">
+    <part name="parameters" element="tns:GetSupervisorEmail" />
+  </message>
+  <message name="GetSupervisorEmail_Result">
+    <part name="parameters" element="tns:GetSupervisorEmail_Result" />
+  </message>
+  <message name="GetActivityCode">
+    <part name="parameters" element="tns:GetActivityCode" />
+  </message>
+  <message name="GetActivityCode_Result">
+    <part name="parameters" element="tns:GetActivityCode_Result" />
+  </message>
+  <message name="GetActivityCodeUsingName">
+    <part name="parameters" element="tns:GetActivityCodeUsingName" />
+  </message>
+  <message name="GetActivityCodeUsingName_Result">
+    <part name="parameters" element="tns:GetActivityCodeUsingName_Result" />
+  </message>
+  <message name="GetBranchCode">
+    <part name="parameters" element="tns:GetBranchCode" />
+  </message>
+  <message name="GetBranchCode_Result">
+    <part name="parameters" element="tns:GetBranchCode_Result" />
+  </message>
+  <message name="GetBranchCodeUsingName">
+    <part name="parameters" element="tns:GetBranchCodeUsingName" />
+  </message>
+  <message name="GetBranchCodeUsingName_Result">
+    <part name="parameters" element="tns:GetBranchCodeUsingName_Result" />
+  </message>
+  <message name="GetAllCustomers">
+    <part name="parameters" element="tns:GetAllCustomers" />
+  </message>
+  <message name="GetAllCustomers_Result">
+    <part name="parameters" element="tns:GetAllCustomers_Result" />
+  </message>
+  <message name="GetAllVendors">
+    <part name="parameters" element="tns:GetAllVendors" />
+  </message>
+  <message name="GetAllVendors_Result">
+    <part name="parameters" element="tns:GetAllVendors_Result" />
+  </message>
+  <message name="GetAllBankAccounts">
+    <part name="parameters" element="tns:GetAllBankAccounts" />
+  </message>
+  <message name="GetAllBankAccounts_Result">
+    <part name="parameters" element="tns:GetAllBankAccounts_Result" />
+  </message>
+  <message name="GetAllGLAccounts">
+    <part name="parameters" element="tns:GetAllGLAccounts" />
+  </message>
+  <message name="GetAllGLAccounts_Result">
+    <part name="parameters" element="tns:GetAllGLAccounts_Result" />
+  </message>
+  <message name="GetLocation">
+    <part name="parameters" element="tns:GetLocation" />
+  </message>
+  <message name="GetLocation_Result">
+    <part name="parameters" element="tns:GetLocation_Result" />
+  </message>
+  <message name="FnUpdatePassword">
+    <part name="parameters" element="tns:FnUpdatePassword" />
+  </message>
+  <message name="FnUpdatePassword_Result">
+    <part name="parameters" element="tns:FnUpdatePassword_Result" />
+  </message>
+  <message name="FnChangePasswordNew">
+    <part name="parameters" element="tns:FnChangePasswordNew" />
+  </message>
+  <message name="FnChangePasswordNew_Result">
+    <part name="parameters" element="tns:FnChangePasswordNew_Result" />
+  </message>
+  <message name="FnApplicationStatus">
+    <part name="parameters" element="tns:FnApplicationStatus" />
+  </message>
+  <message name="FnApplicationStatus_Result">
+    <part name="parameters" element="tns:FnApplicationStatus_Result" />
+  </message>
+  <message name="FnNewPass">
+    <part name="parameters" element="tns:FnNewPass" />
+  </message>
+  <message name="FnNewPass_Result">
+    <part name="parameters" element="tns:FnNewPass_Result" />
+  </message>
+  <portType name="portal_Port">
+    <operation name="FnChangePassword">
+      <input name="FnChangePassword" message="tns:FnChangePassword" />
+      <output name="FnChangePassword_Result" message="tns:FnChangePassword_Result" />
+    </operation>
+    <operation name="FnChangedPassword">
+      <input name="FnChangedPassword" message="tns:FnChangedPassword" />
+      <output name="FnChangedPassword_Result" message="tns:FnChangedPassword_Result" />
+    </operation>
+    <operation name="FnCreateUser">
+      <input name="FnCreateUser" message="tns:FnCreateUser" />
+      <output name="FnCreateUser_Result" message="tns:FnCreateUser_Result" />
+    </operation>
+    <operation name="FnLogin">
+      <input name="FnLogin" message="tns:FnLogin" />
+      <output name="FnLogin_Result" message="tns:FnLogin_Result" />
+    </operation>
+    <operation name="FnApprovals">
+      <input name="FnApprovals" message="tns:FnApprovals" />
+      <output name="FnApprovals_Result" message="tns:FnApprovals_Result" />
+    </operation>
+    <operation name="FnAccounts">
+      <input name="FnAccounts" message="tns:FnAccounts" />
+      <output name="FnAccounts_Result" message="tns:FnAccounts_Result" />
+    </operation>
+    <operation name="FnApproveData">
+      <input name="FnApproveData" message="tns:FnApproveData" />
+      <output name="FnApproveData_Result" message="tns:FnApproveData_Result" />
+    </operation>
+    <operation name="FnReject">
+      <input name="FnReject" message="tns:FnReject" />
+      <output name="FnReject_Result" message="tns:FnReject_Result" />
+    </operation>
+    <operation name="FnDelegate">
+      <input name="FnDelegate" message="tns:FnDelegate" />
+      <output name="FnDelegate_Result" message="tns:FnDelegate_Result" />
+    </operation>
+    <operation name="FnapprovalEach">
+      <input name="FnapprovalEach" message="tns:FnapprovalEach" />
+      <output name="FnapprovalEach_Result" message="tns:FnapprovalEach_Result" />
+    </operation>
+    <operation name="FnGeneratePaymentVoucher">
+      <input name="FnGeneratePaymentVoucher" message="tns:FnGeneratePaymentVoucher" />
+      <output name="FnGeneratePaymentVoucher_Result" message="tns:FnGeneratePaymentVoucher_Result" />
+    </operation>
+    <operation name="FnApprovePv">
+      <input name="FnApprovePv" message="tns:FnApprovePv" />
+      <output name="FnApprovePv_Result" message="tns:FnApprovePv_Result" />
+    </operation>
+    <operation name="FnRejectPv">
+      <input name="FnRejectPv" message="tns:FnRejectPv" />
+      <output name="FnRejectPv_Result" message="tns:FnRejectPv_Result" />
+    </operation>
+    <operation name="SMSMessage">
+      <input name="SMSMessage" message="tns:SMSMessage" />
+      <output name="SMSMessage_Result" message="tns:SMSMessage_Result" />
+    </operation>
+    <operation name="SendEmail">
+      <input name="SendEmail" message="tns:SendEmail" />
+      <output name="SendEmail_Result" message="tns:SendEmail_Result" />
+    </operation>
+    <operation name="FnCreateImprest">
+      <input name="FnCreateImprest" message="tns:FnCreateImprest" />
+      <output name="FnCreateImprest_Result" message="tns:FnCreateImprest_Result" />
+    </operation>
+    <operation name="FnImprestApplication">
+      <input name="FnImprestApplication" message="tns:FnImprestApplication" />
+      <output name="FnImprestApplication_Result" message="tns:FnImprestApplication_Result" />
+    </operation>
+    <operation name="FnImprestApplicationModify">
+      <input name="FnImprestApplicationModify" message="tns:FnImprestApplicationModify" />
+      <output name="FnImprestApplicationModify_Result" message="tns:FnImprestApplicationModify_Result" />
+    </operation>
+    <operation name="FnImprestLinesAppModify">
+      <input name="FnImprestLinesAppModify" message="tns:FnImprestLinesAppModify" />
+      <output name="FnImprestLinesAppModify_Result" message="tns:FnImprestLinesAppModify_Result" />
+    </operation>
+    <operation name="FnImprestLinesApp">
+      <input name="FnImprestLinesApp" message="tns:FnImprestLinesApp" />
+      <output name="FnImprestLinesApp_Result" message="tns:FnImprestLinesApp_Result" />
+    </operation>
+    <operation name="HRLeaveAppInsert">
+      <input name="HRLeaveAppInsert" message="tns:HRLeaveAppInsert" />
+      <output name="HRLeaveAppInsert_Result" message="tns:HRLeaveAppInsert_Result" />
+    </operation>
+    <operation name="HRLeaveAppModify">
+      <input name="HRLeaveAppModify" message="tns:HRLeaveAppModify" />
+      <output name="HRLeaveAppModify_Result" message="tns:HRLeaveAppModify_Result" />
+    </operation>
+    <operation name="NewHRLeaveAppModify">
+      <input name="NewHRLeaveAppModify" message="tns:NewHRLeaveAppModify" />
+      <output name="NewHRLeaveAppModify_Result" message="tns:NewHRLeaveAppModify_Result" />
+    </operation>
+    <operation name="HRLeaveAppModifyDuringApproval">
+      <input name="HRLeaveAppModifyDuringApproval" message="tns:HRLeaveAppModifyDuringApproval" />
+      <output name="HRLeaveAppModifyDuringApproval_Result" message="tns:HRLeaveAppModifyDuringApproval_Result" />
+    </operation>
+    <operation name="SendLeaveForApproval">
+      <input name="SendLeaveForApproval" message="tns:SendLeaveForApproval" />
+      <output name="SendLeaveForApproval_Result" message="tns:SendLeaveForApproval_Result" />
+    </operation>
+    <operation name="ApproveDocument">
+      <input name="ApproveDocument" message="tns:ApproveDocument" />
+      <output name="ApproveDocument_Result" message="tns:ApproveDocument_Result" />
+    </operation>
+    <operation name="GetRecordIDToApprove">
+      <input name="GetRecordIDToApprove" message="tns:GetRecordIDToApprove" />
+      <output name="GetRecordIDToApprove_Result" message="tns:GetRecordIDToApprove_Result" />
+    </operation>
+    <operation name="RejectDocument">
+      <input name="RejectDocument" message="tns:RejectDocument" />
+      <output name="RejectDocument_Result" message="tns:RejectDocument_Result" />
+    </operation>
+    <operation name="FetchEmployeeNoByUserID">
+      <input name="FetchEmployeeNoByUserID" message="tns:FetchEmployeeNoByUserID" />
+      <output name="FetchEmployeeNoByUserID_Result" message="tns:FetchEmployeeNoByUserID_Result" />
+    </operation>
+    <operation name="FetchRecordID_To_Approve_HR">
+      <input name="FetchRecordID_To_Approve_HR" message="tns:FetchRecordID_To_Approve_HR" />
+      <output name="FetchRecordID_To_Approve_HR_Result" message="tns:FetchRecordID_To_Approve_HR_Result" />
+    </operation>
+    <operation name="CancelDocumentLeaveRequest">
+      <input name="CancelDocumentLeaveRequest" message="tns:CancelDocumentLeaveRequest" />
+      <output name="CancelDocumentLeaveRequest_Result" message="tns:CancelDocumentLeaveRequest_Result" />
+    </operation>
+    <operation name="UploadDocumentLeave">
+      <input name="UploadDocumentLeave" message="tns:UploadDocumentLeave" />
+      <output name="UploadDocumentLeave_Result" message="tns:UploadDocumentLeave_Result" />
+    </operation>
+    <operation name="GeneratePayslipReport">
+      <input name="GeneratePayslipReport" message="tns:GeneratePayslipReport" />
+      <output name="GeneratePayslipReport_Result" message="tns:GeneratePayslipReport_Result" />
+    </operation>
+    <operation name="GetSupervisorEmpNo">
+      <input name="GetSupervisorEmpNo" message="tns:GetSupervisorEmpNo" />
+      <output name="GetSupervisorEmpNo_Result" message="tns:GetSupervisorEmpNo_Result" />
+    </operation>
+    <operation name="GetUserFullName">
+      <input name="GetUserFullName" message="tns:GetUserFullName" />
+      <output name="GetUserFullName_Result" message="tns:GetUserFullName_Result" />
+    </operation>
+    <operation name="GetUserIDByEmpNo">
+      <input name="GetUserIDByEmpNo" message="tns:GetUserIDByEmpNo" />
+      <output name="GetUserIDByEmpNo_Result" message="tns:GetUserIDByEmpNo_Result" />
+    </operation>
+    <operation name="CalcReturnDate">
+      <input name="CalcReturnDate" message="tns:CalcReturnDate" />
+      <output name="CalcReturnDate_Result" message="tns:CalcReturnDate_Result" />
+    </operation>
+    <operation name="GenerateP9Report">
+      <input name="GenerateP9Report" message="tns:GenerateP9Report" />
+      <output name="GenerateP9Report_Result" message="tns:GenerateP9Report_Result" />
+    </operation>
+    <operation name="VerifyIntegerAsBoolean">
+      <input name="VerifyIntegerAsBoolean" message="tns:VerifyIntegerAsBoolean" />
+      <output name="VerifyIntegerAsBoolean_Result" message="tns:VerifyIntegerAsBoolean_Result" />
+    </operation>
+    <operation name="UpdateLeaveSenderId">
+      <input name="UpdateLeaveSenderId" message="tns:UpdateLeaveSenderId" />
+      <output name="UpdateLeaveSenderId_Result" message="tns:UpdateLeaveSenderId_Result" />
+    </operation>
+    <operation name="RejectLeaveDocument">
+      <input name="RejectLeaveDocument" message="tns:RejectLeaveDocument" />
+      <output name="RejectLeaveDocument_Result" message="tns:RejectLeaveDocument_Result" />
+    </operation>
+    <operation name="GetGrade">
+      <input name="GetGrade" message="tns:GetGrade" />
+      <output name="GetGrade_Result" message="tns:GetGrade_Result" />
+    </operation>
+    <operation name="IsStartDateValid">
+      <input name="IsStartDateValid" message="tns:IsStartDateValid" />
+      <output name="IsStartDateValid_Result" message="tns:IsStartDateValid_Result" />
+    </operation>
+    <operation name="ReturnApplicationNo">
+      <input name="ReturnApplicationNo" message="tns:ReturnApplicationNo" />
+      <output name="ReturnApplicationNo_Result" message="tns:ReturnApplicationNo_Result" />
+    </operation>
+    <operation name="LeaveTypeForReimbursment">
+      <input name="LeaveTypeForReimbursment" message="tns:LeaveTypeForReimbursment" />
+      <output name="LeaveTypeForReimbursment_Result" message="tns:LeaveTypeForReimbursment_Result" />
+    </operation>
+    <operation name="NumberOfDays">
+      <input name="NumberOfDays" message="tns:NumberOfDays" />
+      <output name="NumberOfDays_Result" message="tns:NumberOfDays_Result" />
+    </operation>
+    <operation name="ReturnStartDate">
+      <input name="ReturnStartDate" message="tns:ReturnStartDate" />
+      <output name="ReturnStartDate_Result" message="tns:ReturnStartDate_Result" />
+    </operation>
+    <operation name="ReturnEndDate">
+      <input name="ReturnEndDate" message="tns:ReturnEndDate" />
+      <output name="ReturnEndDate_Result" message="tns:ReturnEndDate_Result" />
+    </operation>
+    <operation name="IsTherePendingLeave">
+      <input name="IsTherePendingLeave" message="tns:IsTherePendingLeave" />
+      <output name="IsTherePendingLeave_Result" message="tns:IsTherePendingLeave_Result" />
+    </operation>
+    <operation name="IsThereActiveLeave">
+      <input name="IsThereActiveLeave" message="tns:IsThereActiveLeave" />
+      <output name="IsThereActiveLeave_Result" message="tns:IsThereActiveLeave_Result" />
+    </operation>
+    <operation name="ReturnDocWithNewStatus">
+      <input name="ReturnDocWithNewStatus" message="tns:ReturnDocWithNewStatus" />
+      <output name="ReturnDocWithNewStatus_Result" message="tns:ReturnDocWithNewStatus_Result" />
+    </operation>
+    <operation name="CancelApprovalEntry">
+      <input name="CancelApprovalEntry" message="tns:CancelApprovalEntry" />
+      <output name="CancelApprovalEntry_Result" message="tns:CancelApprovalEntry_Result" />
+    </operation>
+    <operation name="DeleteRelieverEntry">
+      <input name="DeleteRelieverEntry" message="tns:DeleteRelieverEntry" />
+      <output name="DeleteRelieverEntry_Result" message="tns:DeleteRelieverEntry_Result" />
+    </operation>
+    <operation name="UpdateLeaveApplicationStatus">
+      <input name="UpdateLeaveApplicationStatus" message="tns:UpdateLeaveApplicationStatus" />
+      <output name="UpdateLeaveApplicationStatus_Result" message="tns:UpdateLeaveApplicationStatus_Result" />
+    </operation>
+    <operation name="ReturnCountyName">
+      <input name="ReturnCountyName" message="tns:ReturnCountyName" />
+      <output name="ReturnCountyName_Result" message="tns:ReturnCountyName_Result" />
+    </operation>
+    <operation name="FullName">
+      <input name="FullName" message="tns:FullName" />
+      <output name="FullName_Result" message="tns:FullName_Result" />
+    </operation>
+    <operation name="EmployeePhoto">
+      <input name="EmployeePhoto" message="tns:EmployeePhoto" />
+      <output name="EmployeePhoto_Result" message="tns:EmployeePhoto_Result" />
+    </operation>
+    <operation name="SendToReliever">
+      <input name="SendToReliever" message="tns:SendToReliever" />
+      <output name="SendToReliever_Result" message="tns:SendToReliever_Result" />
+    </operation>
+    <operation name="CheckLeaveDaysAvailable">
+      <input name="CheckLeaveDaysAvailable" message="tns:CheckLeaveDaysAvailable" />
+      <output name="CheckLeaveDaysAvailable_Result" message="tns:CheckLeaveDaysAvailable_Result" />
+    </operation>
+    <operation name="FnStaffInfo">
+      <input name="FnStaffInfo" message="tns:FnStaffInfo" />
+      <output name="FnStaffInfo_Result" message="tns:FnStaffInfo_Result" />
+    </operation>
+    <operation name="GetUserByUserID">
+      <input name="GetUserByUserID" message="tns:GetUserByUserID" />
+      <output name="GetUserByUserID_Result" message="tns:GetUserByUserID_Result" />
+    </operation>
+    <operation name="GetAllEmployeeNames">
+      <input name="GetAllEmployeeNames" message="tns:GetAllEmployeeNames" />
+      <output name="GetAllEmployeeNames_Result" message="tns:GetAllEmployeeNames_Result" />
+    </operation>
+    <operation name="GetLeaveTypes">
+      <input name="GetLeaveTypes" message="tns:GetLeaveTypes" />
+      <output name="GetLeaveTypes_Result" message="tns:GetLeaveTypes_Result" />
+    </operation>
+    <operation name="GetSupervisorName">
+      <input name="GetSupervisorName" message="tns:GetSupervisorName" />
+      <output name="GetSupervisorName_Result" message="tns:GetSupervisorName_Result" />
+    </operation>
+    <operation name="GetSupervisorEmail">
+      <input name="GetSupervisorEmail" message="tns:GetSupervisorEmail" />
+      <output name="GetSupervisorEmail_Result" message="tns:GetSupervisorEmail_Result" />
+    </operation>
+    <operation name="GetActivityCode">
+      <input name="GetActivityCode" message="tns:GetActivityCode" />
+      <output name="GetActivityCode_Result" message="tns:GetActivityCode_Result" />
+    </operation>
+    <operation name="GetActivityCodeUsingName">
+      <input name="GetActivityCodeUsingName" message="tns:GetActivityCodeUsingName" />
+      <output name="GetActivityCodeUsingName_Result" message="tns:GetActivityCodeUsingName_Result" />
+    </operation>
+    <operation name="GetBranchCode">
+      <input name="GetBranchCode" message="tns:GetBranchCode" />
+      <output name="GetBranchCode_Result" message="tns:GetBranchCode_Result" />
+    </operation>
+    <operation name="GetBranchCodeUsingName">
+      <input name="GetBranchCodeUsingName" message="tns:GetBranchCodeUsingName" />
+      <output name="GetBranchCodeUsingName_Result" message="tns:GetBranchCodeUsingName_Result" />
+    </operation>
+    <operation name="GetAllCustomers">
+      <input name="GetAllCustomers" message="tns:GetAllCustomers" />
+      <output name="GetAllCustomers_Result" message="tns:GetAllCustomers_Result" />
+    </operation>
+    <operation name="GetAllVendors">
+      <input name="GetAllVendors" message="tns:GetAllVendors" />
+      <output name="GetAllVendors_Result" message="tns:GetAllVendors_Result" />
+    </operation>
+    <operation name="GetAllBankAccounts">
+      <input name="GetAllBankAccounts" message="tns:GetAllBankAccounts" />
+      <output name="GetAllBankAccounts_Result" message="tns:GetAllBankAccounts_Result" />
+    </operation>
+    <operation name="GetAllGLAccounts">
+      <input name="GetAllGLAccounts" message="tns:GetAllGLAccounts" />
+      <output name="GetAllGLAccounts_Result" message="tns:GetAllGLAccounts_Result" />
+    </operation>
+    <operation name="GetLocation">
+      <input name="GetLocation" message="tns:GetLocation" />
+      <output name="GetLocation_Result" message="tns:GetLocation_Result" />
+    </operation>
+    <operation name="FnUpdatePassword">
+      <input name="FnUpdatePassword" message="tns:FnUpdatePassword" />
+      <output name="FnUpdatePassword_Result" message="tns:FnUpdatePassword_Result" />
+    </operation>
+    <operation name="FnChangePasswordNew">
+      <input name="FnChangePasswordNew" message="tns:FnChangePasswordNew" />
+      <output name="FnChangePasswordNew_Result" message="tns:FnChangePasswordNew_Result" />
+    </operation>
+    <operation name="FnApplicationStatus">
+      <input name="FnApplicationStatus" message="tns:FnApplicationStatus" />
+      <output name="FnApplicationStatus_Result" message="tns:FnApplicationStatus_Result" />
+    </operation>
+    <operation name="FnNewPass">
+      <input name="FnNewPass" message="tns:FnNewPass" />
+      <output name="FnNewPass_Result" message="tns:FnNewPass_Result" />
+    </operation>
+  </portType>
+  <binding name="portal_Binding" type="tns:portal_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="FnChangePassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnChangePassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnChangePassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnChangePassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnChangedPassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnChangedPassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnChangedPassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnChangedPassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnCreateUser">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnCreateUser" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnCreateUser">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnCreateUser_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnLogin">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnLogin" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnLogin">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnLogin_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnApprovals">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnApprovals" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnApprovals">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnApprovals_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnAccounts">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnAccounts" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnAccounts">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnAccounts_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnApproveData">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnApproveData" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnApproveData">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnApproveData_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnReject">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnReject" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnReject">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnReject_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnDelegate">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnDelegate" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnDelegate">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnDelegate_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnapprovalEach">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnapprovalEach" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnapprovalEach">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnapprovalEach_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnGeneratePaymentVoucher">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnGeneratePaymentVoucher" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnGeneratePaymentVoucher">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnGeneratePaymentVoucher_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnApprovePv">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnApprovePv" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnApprovePv">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnApprovePv_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnRejectPv">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnRejectPv" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnRejectPv">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnRejectPv_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SMSMessage">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:SMSMessage" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SMSMessage">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SMSMessage_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SendEmail">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:SendEmail" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SendEmail">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SendEmail_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnCreateImprest">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnCreateImprest" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnCreateImprest">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnCreateImprest_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnImprestApplication">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnImprestApplication" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnImprestApplication">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnImprestApplication_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnImprestApplicationModify">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnImprestApplicationModify" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnImprestApplicationModify">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnImprestApplicationModify_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnImprestLinesAppModify">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnImprestLinesAppModify" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnImprestLinesAppModify">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnImprestLinesAppModify_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnImprestLinesApp">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnImprestLinesApp" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnImprestLinesApp">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnImprestLinesApp_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRLeaveAppInsert">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:HRLeaveAppInsert" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRLeaveAppInsert">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRLeaveAppInsert_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRLeaveAppModify">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:HRLeaveAppModify" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRLeaveAppModify">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRLeaveAppModify_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="NewHRLeaveAppModify">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:NewHRLeaveAppModify" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="NewHRLeaveAppModify">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="NewHRLeaveAppModify_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="HRLeaveAppModifyDuringApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:HRLeaveAppModifyDuringApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="HRLeaveAppModifyDuringApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="HRLeaveAppModifyDuringApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SendLeaveForApproval">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:SendLeaveForApproval" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SendLeaveForApproval">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SendLeaveForApproval_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ApproveDocument">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:ApproveDocument" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ApproveDocument">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ApproveDocument_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetRecordIDToApprove">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetRecordIDToApprove" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetRecordIDToApprove">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetRecordIDToApprove_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="RejectDocument">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:RejectDocument" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="RejectDocument">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="RejectDocument_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FetchEmployeeNoByUserID">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FetchEmployeeNoByUserID" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FetchEmployeeNoByUserID">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FetchEmployeeNoByUserID_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FetchRecordID_To_Approve_HR">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FetchRecordID_To_Approve_HR" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FetchRecordID_To_Approve_HR">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FetchRecordID_To_Approve_HR_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CancelDocumentLeaveRequest">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:CancelDocumentLeaveRequest" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CancelDocumentLeaveRequest">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CancelDocumentLeaveRequest_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UploadDocumentLeave">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:UploadDocumentLeave" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UploadDocumentLeave">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UploadDocumentLeave_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GeneratePayslipReport">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GeneratePayslipReport" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GeneratePayslipReport">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GeneratePayslipReport_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetSupervisorEmpNo">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetSupervisorEmpNo" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetSupervisorEmpNo">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetSupervisorEmpNo_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetUserFullName">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetUserFullName" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetUserFullName">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetUserFullName_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetUserIDByEmpNo">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetUserIDByEmpNo" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetUserIDByEmpNo">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetUserIDByEmpNo_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CalcReturnDate">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:CalcReturnDate" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CalcReturnDate">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CalcReturnDate_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GenerateP9Report">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GenerateP9Report" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GenerateP9Report">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GenerateP9Report_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="VerifyIntegerAsBoolean">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:VerifyIntegerAsBoolean" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="VerifyIntegerAsBoolean">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="VerifyIntegerAsBoolean_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UpdateLeaveSenderId">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:UpdateLeaveSenderId" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UpdateLeaveSenderId">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UpdateLeaveSenderId_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="RejectLeaveDocument">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:RejectLeaveDocument" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="RejectLeaveDocument">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="RejectLeaveDocument_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetGrade">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetGrade" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetGrade">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetGrade_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="IsStartDateValid">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:IsStartDateValid" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="IsStartDateValid">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="IsStartDateValid_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReturnApplicationNo">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:ReturnApplicationNo" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReturnApplicationNo">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReturnApplicationNo_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="LeaveTypeForReimbursment">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:LeaveTypeForReimbursment" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="LeaveTypeForReimbursment">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="LeaveTypeForReimbursment_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="NumberOfDays">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:NumberOfDays" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="NumberOfDays">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="NumberOfDays_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReturnStartDate">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:ReturnStartDate" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReturnStartDate">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReturnStartDate_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReturnEndDate">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:ReturnEndDate" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReturnEndDate">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReturnEndDate_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="IsTherePendingLeave">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:IsTherePendingLeave" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="IsTherePendingLeave">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="IsTherePendingLeave_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="IsThereActiveLeave">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:IsThereActiveLeave" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="IsThereActiveLeave">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="IsThereActiveLeave_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReturnDocWithNewStatus">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:ReturnDocWithNewStatus" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReturnDocWithNewStatus">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReturnDocWithNewStatus_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CancelApprovalEntry">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:CancelApprovalEntry" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CancelApprovalEntry">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CancelApprovalEntry_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DeleteRelieverEntry">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:DeleteRelieverEntry" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DeleteRelieverEntry">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DeleteRelieverEntry_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UpdateLeaveApplicationStatus">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:UpdateLeaveApplicationStatus" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UpdateLeaveApplicationStatus">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UpdateLeaveApplicationStatus_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReturnCountyName">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:ReturnCountyName" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReturnCountyName">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReturnCountyName_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FullName">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FullName" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FullName">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FullName_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="EmployeePhoto">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:EmployeePhoto" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="EmployeePhoto">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="EmployeePhoto_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SendToReliever">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:SendToReliever" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SendToReliever">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SendToReliever_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CheckLeaveDaysAvailable">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:CheckLeaveDaysAvailable" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CheckLeaveDaysAvailable">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CheckLeaveDaysAvailable_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnStaffInfo">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnStaffInfo" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnStaffInfo">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnStaffInfo_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetUserByUserID">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetUserByUserID" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetUserByUserID">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetUserByUserID_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetAllEmployeeNames">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetAllEmployeeNames" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetAllEmployeeNames">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetAllEmployeeNames_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetLeaveTypes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetLeaveTypes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetLeaveTypes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetLeaveTypes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetSupervisorName">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetSupervisorName" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetSupervisorName">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetSupervisorName_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetSupervisorEmail">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetSupervisorEmail" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetSupervisorEmail">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetSupervisorEmail_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetActivityCode">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetActivityCode" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetActivityCode">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetActivityCode_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetActivityCodeUsingName">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetActivityCodeUsingName" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetActivityCodeUsingName">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetActivityCodeUsingName_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetBranchCode">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetBranchCode" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetBranchCode">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetBranchCode_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetBranchCodeUsingName">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetBranchCodeUsingName" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetBranchCodeUsingName">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetBranchCodeUsingName_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetAllCustomers">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetAllCustomers" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetAllCustomers">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetAllCustomers_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetAllVendors">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetAllVendors" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetAllVendors">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetAllVendors_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetAllBankAccounts">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetAllBankAccounts" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetAllBankAccounts">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetAllBankAccounts_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetAllGLAccounts">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetAllGLAccounts" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetAllGLAccounts">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetAllGLAccounts_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetLocation">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:GetLocation" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetLocation">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetLocation_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnUpdatePassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnUpdatePassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnUpdatePassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnUpdatePassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnChangePasswordNew">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnChangePasswordNew" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnChangePasswordNew">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnChangePasswordNew_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnApplicationStatus">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnApplicationStatus" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnApplicationStatus">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnApplicationStatus_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnNewPass">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/portal:FnNewPass" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnNewPass">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnNewPass_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="portal">
+    <port name="portal_Port" binding="tns:portal_Binding">
+      <address location="http://desktop-psfc40k:7047/BC130/WS/COPY%20OF%20LIVE/Codeunit/portal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

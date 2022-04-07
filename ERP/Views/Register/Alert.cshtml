@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+<!DOCTYPE html>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alert</title>
+</head>
+<body>
+    <div>
+
+        @*<script type="text/javascript">
+                $(document).ready(function () {
+                    $("#btnAlertMessage").click(function () {
+                        //alert("Alert Message");
+                        swal("Here is the Alert Message");
+                    })
+                })
+            </script>
+            <h2>Alert</h2>
+            <input type="button" value="Alert Message" name="alertMesage" id="btnAlertMessage" />
+
+
+        </div>*@
+        <form id="form1" runat="server">
+            <div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            swal("Good job!", "You clicked the button!", "success");
+                                    })
+
+
+                </script>
+            </div>
+        </form>
+</body>
+</html>

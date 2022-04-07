@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="KENYA FILM COMMISSION$Online Users">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="startkey" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="idnumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="userID" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="KENYA FILM COMMISSION$Online Users" EntityType="Self.KENYA FILM COMMISSION$Online Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

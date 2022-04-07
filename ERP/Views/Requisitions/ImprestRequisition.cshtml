@@ -1,0 +1,530 @@
+﻿@model KFCPortal.Models.imprest
+    @{
+        ViewBag.Title = "ImprestRequisition";
+        Layout = "~/Views/Shared/Dashboard.cshtml";
+    }
+        @using (Html.BeginForm("ImprestRequisition", "Requisitions", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+<div class="row ">
+
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+
+        <div class="jumbotron">
+            <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                    <h3>Basic Information</h3>
+                </ul>
+            </div><!-- /.card-header -->
+            <div class="card-body" onload="CheckAccountType()">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="activity">
+                        <form class="form-horizontal">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="phone">Requestor ID</label>
+                                        @Html.EditorFor(model => model.RequestorID, new { htmlAttributes = new { @class = "form-control", type = "text", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="company">
+                                        </label>
+                                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", type = "text", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="email">Activity Code</label>
+                                        @Html.DropDownListFor(x => Model.ActivityCode, new SelectList(Model.ActivityCodes, "Text"), htmlAttributes: new { @class = "form-control", onChange = "" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="email">Branch Code</label>
+                                        @Html.DropDownListFor(x => Model.BranchCode, new SelectList(Model.BranchCodes, "Text"), htmlAttributes: new { @class = "form-control", onChange = "" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="url">Account Name</label>
+                                        @Html.DropDownListFor(x => Model.AccountName, new SelectList(Model.AccountNames, "Text"), htmlAttributes: new { @class = "form-control", onChange = "AccountNumberOnChangeEvent()" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="last">Account Number</label>
+                                        @Html.EditorFor(model => model.AccountNo, new { htmlAttributes = new { @class = "form-control", type = "text", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="email">Account Type</label>
+                                        <input type="text" class="form-control" placeholder="Customer" id="accountType" readonly="readonly" value="Customer">
+                                    </div>
+                                </div>
+                                @*<div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" class="form-control" id="" placeholder="">
+                                    </div>
+                                </div>*@
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="last">Paying Account Type</label>
+                                        @Html.DropDownListFor(x => Model.PayingAccountType, new SelectList(Model.PayingAccountTypes, "Text"), htmlAttributes: new { @class = "form-control", onChange = "GetPayingAccountOnChange()" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="last">Paying Account Name</label>
+                                        @*@if()*@
+                                        @Html.DropDownListFor(x => Model.Bank, new SelectList(Model.AllBankAccounts, "Text"), htmlAttributes: new { @class = "form-control", onChange = "PayingBankAccountOnChangeEvent()" })
+                                        @Html.DropDownListFor(x => Model.Vendor, new SelectList(Model.AllVendorAccounts, "Text"), htmlAttributes: new { @class = "form-control", onChange = "PayingVendorAccountOnChangeEvent()", @style="display:none;" })
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="last">Paying Account No</label>
+                                        @Html.EditorFor(model => model.PayingAccountName, new { htmlAttributes = new { @class = "form-control", type = "text", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="url">Imprest Status</label>
+                                        <input type="text" class="form-control" placeholder="OPEN" id="imprestStatus" readonly="readonly" value="OPEN">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="url">Total Net Amount</label>
+                                        <input type="text" class="form-control" id="TotalNetAmount" placeholder="0" value="0" readonly="readonly">
+                                    </div>
+                                </div> 
+                            </div>
+                            <!--  row   --> 
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="url">Attachment</label>
+                                        @Html.TextBox("file", "", new { type = "file" }) <br />
+                                        @ViewBag.Message
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  row   -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*<label for="url">Memo Attached</label>
+                                        <input type="checkbox" class="form-control" id="url" placeholder="">*@
+                                        <label for="checkid" style="word-wrap:break-word">
+                                            <input id="checkid" type="checkbox" value="test" />testdata
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+
+                        </form>
+                    </div>
+                </div>
+
+
+<div class="card-header p-2">
+    <ul class="nav nav-pills">
+        <h3>Imprest Details</h3>
+    </ul>
+</div>
+<form onsubmit="event.preventDefault();onFormSubmit();">
+<div class="tab-content">
+    <div class="tab-pane active" id="activity">
+        <form class="form-horizontal">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="url">Account Name</label>
+                        @Html.DropDownListFor(x => Model.GLAccountName, new SelectList(Model.AllPaymentTypes, "Text"), htmlAttributes: new { @class = "form-control", onChange = "GLAccountNumberOnChangeEvent()" })
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="last">Account Number</label>
+                        @Html.EditorFor(model => model.GLAccountNo, new { htmlAttributes = new { @class = "form-control", type = "text", @readonly = "readonly" } })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="email">Amount</label>
+                        <input type="text" id="amount" class="form-control" placeholder="0" value="0">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="url">Description</label>
+                        <input type="text" class="form-control" id="description" placeholder="">
+                    </div>
+                </div>
+                <button type="submit" id="addLine" class="btn btn-success">Add Lines</button>
+        </form>
+       
+
+        @*<div class="col-md-4">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="" placeholder="">
+                </div>
+            </div>*@
+
+    </div>
+
+            <!-- row -->
+            <div class="row">
+            </div>
+
+
+
+            <!--  row   -->
+            <!--  row   -->
+            @*<div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="url">Memo Attached</label>
+                            <input type="checkbox" class="form-control" id="url" placeholder="">
+                        </div>
+                    </div>
+                </div>*@
+            <br />
+
+        </form>
+    </div>
+</div>
+<div class="tab-pane" id="nok">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-centered table-nowrap" id="show" method="post">
+                            <thead class="thead-light">
+                               <tr>
+                                    <th>Account No</th>
+                                    <th>Account Name</th>
+                                    <th>Account Type</th>
+                                    <th>Amount</th>
+                                    <th>Purpose</th>
+                                   <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<button type="submit" onclick="ImprestSubmit()" class="btn btn-primary">Send Approval Request</button>
+
+           </div>
+            <!-- /.tab-content -->
+        </div><!-- /.card-body -->
+  
+
+
+}
+
+<script>
+    function AccountNumberOnChangeEvent() {
+        console.log("Start");
+        $.ajax(
+        {
+            url: '/Requisitions/GetAccountNumber?accountName=' + $("#AccountName").val(),
+            type: 'GET',
+            data: "",
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                console.log(data);
+                $("#AccountNo").val(data);
+            },
+            error: function () {
+                console.log("Error");
+                alert("error");
+            }
+        });
+    }
+    function PayingBankAccountOnChangeEvent() {
+        console.log("Start");
+        $.ajax(
+        {
+            url: '/Requisitions/GetPayingBankAccountName?payingBankAccount=' + $("#Bank").val(),
+            type: 'GET',
+            data: "",
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                console.log(data);
+                $("#PayingAccountName").val(data);
+            },
+            error: function () {
+                console.log("Error");
+                alert("error");
+            }
+        });
+    }
+
+    function GetPayingAccountOnChange()
+    {
+        CheckAccountType();
+    }
+
+    function PayingVendorAccountOnChangeEvent() {
+        GetVendorAccount();
+    }
+
+    function CheckAccountType()
+    {
+        if ($("#PayingAccountType").val() == 'FOSA Account') {
+
+            $("#Bank").hide();
+            $("#Vendor").show();
+        } else {
+            $("#Bank").show();
+            $("#Vendor").hide();
+        }
+    }
+
+    function GetVendorAccount() {
+        var len = $("#Vendor").val().length;
+        if (len > 0) {
+            const arrayOfStrings = $("#Vendor").val().split(':');
+            $("#PayingAccountName").val(arrayOfStrings[1]);
+        } else {
+            
+        }
+    }
+    
+    function GLAccountNumberOnChangeEvent() {
+        console.log($("#GLAccountName").val());
+        $.ajax(
+        {
+            url: '/Requisitions/GetGLAccountNumber?accountName=' + $("#GLAccountName").val(),
+            type: 'GET',
+            data: "",
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                console.log(data);
+                $("#GLAccountNo").val(data);
+            },
+            error: function () {
+                console.log("Error");
+                alert("error");
+            }
+        });
+    }
+
+
+
+    var GLAccountNo = $(".GLAccountNo").val();
+    var GLAccountName = $(".GLAccountName").val();
+    var amount = $(".amount").val();
+    var description = $(".description").val();
+
+    var n = 1;
+    var x = 0;
+
+    function addImprestLine() {
+
+        var AddRown = document.getElementById('show');
+        var NewRow = AddRown.insertRow(n);
+
+        GLAccountNo = document.getElementById("GLAccountNo").value;
+        GLAccountName = document.getElementById("GLAccountName").value;
+        amount = document.getElementById("amount").value;
+        description = document.getElementById("description").value;
+
+        var cel1 = NewRow.insertCell(0);
+        var cel2 = NewRow.insertCell(1);
+        var cel3 = NewRow.insertCell(2);
+        var cel4 = NewRow.insertCell(3);
+        var cel5 = NewRow.insertCell(4);
+
+        cel1.innerHTML = GLAccountNo;
+        cel2.innerHTML = 'Imprest';
+        cel3.innerHTML = GLAccountName;
+        cel4.innerHTML = amount;
+        cel5.innerHTML = description;
+
+        n++;
+        x++;
+    }
+
+    var selectedRow = null
+
+    function onFormSubmit() {
+        if (validate()) {
+            var formData = readFormData();
+            if (selectedRow == null) {
+                insertNewRecord(formData);
+                resetForm();
+                getTotalNetAmount();
+            }
+            else {
+                updateRecord(formData);
+                resetForm();
+                getTotalNetAmount();
+            }
+        }
+    }
+
+    function readFormData() {
+        var formData = {};
+        formData["GLAccountNo"] = document.getElementById("GLAccountNo").value;
+        formData["GLAccountName"] = document.getElementById("GLAccountName").value;
+        formData["amount"] = document.getElementById("amount").value;
+        formData["description"] = document.getElementById("description").value;
+        return formData;
+    }
+
+    function insertNewRecord(data) {
+        var table = document.getElementById("show").getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow(table.length);
+        cell1 = newRow.insertCell(0);
+        cell1.innerHTML = data.GLAccountNo;
+        cell2 = newRow.insertCell(1);
+        cell2.innerHTML = data.GLAccountName;
+        cell3 = newRow.insertCell(2);
+        cell3.innerHTML = 'Imprest';
+        cell4 = newRow.insertCell(3);
+        cell4.innerHTML = data.amount;
+        cell5 = newRow.insertCell(4);
+        cell5.innerHTML = data.description;
+        cell6 = newRow.insertCell(5);
+        cell6.innerHTML = `<button type="button" class="btn btn-success" onClick="onEdit(this)">Edit</button>
+                       <button type="button" class ="btn btn-danger" onClick="onDelete(this)">Delete</button>`;
+    }
+
+    function resetForm() {
+        document.getElementById("GLAccountNo").value = "";
+        document.getElementById("GLAccountName").value = "";
+        document.getElementById("amount").value = "";
+        document.getElementById("description").value = "";
+        getTotalNetAmount();
+        selectedRow = null;
+    }
+
+    function onEdit(td) {
+        selectedRow = td.parentElement.parentElement;
+        document.getElementById("GLAccountNo").value = selectedRow.cells[0].innerHTML;
+        document.getElementById("GLAccountName").value = selectedRow.cells[1].innerHTML;
+        document.getElementById("amount").value = selectedRow.cells[3].innerHTML;
+        document.getElementById("description").value = selectedRow.cells[4].innerHTML;
+    }
+    function updateRecord(formData) {
+        selectedRow.cells[0].innerHTML = formData.GLAccountNo;
+        selectedRow.cells[1].innerHTML = formData.GLAccountName;
+        selectedRow.cells[3].innerHTML = formData.amount;
+        selectedRow.cells[4].innerHTML = formData.description;
+    }
+
+    function onDelete(td) {
+        if (confirm('Are you sure you want to delete this record ?')) {
+            row = td.parentElement.parentElement;
+            document.getElementById("show").deleteRow(row.rowIndex);            
+            resetForm();
+            getTotalNetAmount();
+        }
+    }
+
+    function getTotalNetAmount()
+    {
+        var sumVal=0;
+        var table = document.getElementById("show");
+        for (var i = 1; i < table.rows.length; i++)
+        {
+            sumVal = sumVal + parseInt(table.rows[i].cells[3].innerHTML);
+        }
+        console.log(sumVal);
+        $("#TotalNetAmount").val(sumVal);
+    }
+    function validate() {
+        isValid = true;
+        if (document.getElementById("GLAccountNo").value == "") {
+            isValid = false;
+            //document.getElementById("AccountNoValidationError").classList.remove("hide");
+        } else {
+            isValid = true;
+            //if (!document.getElementById("AccountNoValidationError").classList.contains("hide"))
+            //    document.getElementById("AccountNoValidationError").classList.add("hide");
+        }
+        return isValid;
+    }
+
+    function ImprestSubmit() {
+        var PayingAccountType;
+
+        if ($("#PayingAccountType").val() == 'FOSA Account') {
+            PayingAccountType = "0";
+        } else {
+            PayingAccountType = "1";
+        }
+
+        if (confirm('Are you sure you want to submit this Imprest ?')) {
+            $.ajax(
+            {
+                url: '/Requisitions/imprestApplication?memberNo=' + $("#RequestorID").val() + ' &imprestAccount=' + $("#AccountNo").val() + ' &bankAccount=' + $("#PayingAccountName").val() + ' &payingAccount=' + PayingAccountType + ' &daysApplied=0 &startDate=' + $("#Date").val() + ' &totalNet=' + $("#TotalNetAmount").val() + ' &activityCode=' + $("#ActivityCode").val() + ' &branchCode=' + $("#BranchCode").val(),
+                type: 'POST',
+                data: "",
+                contentType: 'application/json; charset=utf-8',
+                success: function (imprestHeaderNo) {
+                    //console.log(imprestHeaderNo);
+                    alert('Request successfully sent!');
+                    var sumVal = 0;
+                    var table = document.getElementById("show");
+                    for (var i = 1; i < table.rows.length; i++) {
+                        //sumVal = sumVal + parseInt(table.rows[i].cells[3].innerHTML);
+                        //string accountNo, string purpose, string accName,string amount
+                        var accountNo = table.rows[i].cells[0].innerHTML;
+                        var purpose = table.rows[i].cells[4].innerHTML;
+                        var accName = table.rows[i].cells[1].innerHTML;
+                        var amount = table.rows[i].cells[3].innerHTML;
+                        $.ajax(
+                           {
+
+                               url: '/Requisitions/imprestLine?memberNo=' + $("#RequestorID").val() + ' &appNo=' + imprestHeaderNo + ' &accountNo=' + accountNo + ' &purpose=' + purpose + ' &accName=' + accName + ' &amount=' + amount + ' &activityCode=' + $("#ActivityCode").val() + ' &branchCode=' + $("#BranchCode").val(),
+                               type: 'POST',
+                               data: "",
+                               contentType: 'application/json; charset=utf-8',
+                               success: function (imprestLines) {
+                                   //console.log('Response of ImprestLines:' + data.Response);
+                                   console.log(imprestLines)
+                                   //ImprestLine(data);
+                                   //alert("Imprest Saved Successful");
+                               },
+                               error: function () {
+                                   //alert("error");
+                               }
+                           });
+
+                    }
+                },
+                error: function () {
+                    //alert("error");
+                }
+            });
+          } 
+        //else {
+        //    alert("A problem occurred processing your request!");
+        //}
+
+    }
+</script>

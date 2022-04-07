@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model2StoreContainer" CdmEntityContainer="KFC_DBEntities1">
+    <EntitySetMapping Name="COPY_OF_LIVE_Online_Users">
+      <EntityTypeMapping TypeName="Model2.COPY_OF_LIVE_Online_Users">
+        <MappingFragment StoreEntitySet="COPY OF LIVE$Online Users">
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="startkey" ColumnName="startkey" />
+          <ScalarProperty Name="idnumber" ColumnName="idnumber" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="ChangePassword" ColumnName="ChangePassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

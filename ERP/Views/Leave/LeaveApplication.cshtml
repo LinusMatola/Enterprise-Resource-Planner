@@ -1,0 +1,368 @@
+﻿@model KFCPortal.Models.leaveapplication
+@{
+    ViewBag.Title = "LeaveApplication";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+@using (Html.BeginForm("LeaveApplication", "Leave", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12 col-lg-12 col xs-12">
+            <div class="jumbotron">
+                <h4>Leave Application Card</h4>
+                <div class="card-header p-2">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a class="nav-link active" href="#nok" data-toggle="tab">General Details</a></li>
+                    </ul>
+                </div>
+                @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="activity">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    @*<div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="first">Application No:</label>
+                                            <input type="text" class="form-control" placeholder="" id="no">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="last">Responsibility Center:</label>
+                                            <input type="text" class="form-control" placeholder="" id="center">
+                                        </div>
+                                    </div>*@
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="leaveType ">Leave Type:</label>
+                                           @Html.DropDownListFor(x => Model.leaveType, new SelectList(Model.leaveTypes, "Text"), htmlAttributes: new { @class = "form-control", id = "leaveTypes" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="date">Start Date:</label>
+                                            @Html.EditorFor(model => model.startDate, new { htmlAttributes = new { @class = "form-control", type = "date", @onchange = "UpdateDateOnChangeEvent()" } })
+                                            @*<input type="date" class="form-control" id="date" placeholder="">*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="days">Days Applied:</label>
+                                            @*<input type="number" class="form-control" placeholder="" id="leaveDays" value="1" onchange="ReturnDateOnChangeEvent()">*@
+                                            @Html.EditorFor(model => model.daysApplied, new { htmlAttributes = new { @class = "form-control", type = "number", value="1", @onchange= "UpdateDateOnChangeEvent()" } })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="date">End Date:</label>
+                                            @Html.EditorFor(model => model.endDate, new { htmlAttributes = new { @class = "form-control", type = "date", @readonly="readonly" } })
+                                            @*<input type="date" class="form-control" id="date" placeholder="">*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="date">Return Date:</label>
+                                            @Html.EditorFor(model => model.returnDate, new { htmlAttributes = new { @class = "form-control", type = "date", @readonly = "readonly" } })
+                                            @*<input type="date" class="form-control" id="date" placeholder="">*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="date">Leave Allowance:</label>
+                                            @Html.EditorFor(model => model.request_Leave_Allowance, new { htmlAttributes = new { @class = "form-control", type = "checkbox" } })                          
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- row -->
+                                @*<div class="row">
+                                                                                                           
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="url">Request Leave Allowance:</label>
+                                            <input type="checkbox" class="form-control" id="leaveAllowance" placeholder="">
+                                        </div>
+                                    </div>
+
+                                </div>*@
+
+                                <div class="card-header p-2">
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item"><a class="nav-link active" href="#nok" data-toggle="tab">Employee Details</a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">Applicants No:</label>
+                                            @Html.EditorFor(model => @Model.employeeNo, new { htmlAttributes = new { @class = "form-control", type = "text", @readonly = "readonly" } })
+                                            @*<input type="number" class="form-control" id="employeeNo" readonly="readonly" placeholder="@Model.userID">*@
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">User ID:</label>
+                                            @Html.EditorFor(model => @Model.userID, new { htmlAttributes = new { @class = "form-control", type = "text", @readonly = "readonly" } })
+                                            @*<input type="number" class="form-control" id="employeeNo" readonly="readonly" placeholder="@Model.userID">*@
+                                           
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">Applicants Name:</label>
+                                            @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", type = "text", @readonly= "readonly" } })
+                                            @*<input type="text" class="form-control" id="name" readonly="readonly" placeholder="@Model.FirstName@Model.MiddleName@Model.LastName">*@
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">Job Title:</label>
+                                            @*@Html.EditorFor(model => model.employeeNo, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Job Title" } })*@
+                                            <input type="url" class="form-control" id="url" readonly="readonly" placeholder="@Model.JobTittle">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">Email Address:</label>
+                                            <input type="url" class="form-control" id="url" readonly="readonly" placeholder="@Model.EmailAddress">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">Cellphone No:</label>
+                                            <input type="url" class="form-control" id="url" readonly="readonly" placeholder="@Model.CellPhoneNumber">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">Department:</label>
+                                            @*@Html.EditorFor(model => model.Department, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Department" } })*@
+                                            <input type="text" class="form-control" id="Department" readonly="readonly" placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">Gender:</label>
+                                            <input type="text" class="form-control" id="Gender" readonly="readonly" placeholder="@Model.Gender">
+
+                                        </div>
+                                    </div>
+                                    <!--  row   -->
+                                    <div class="row">
+
+                                        
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="url">Supervisor ID:</label>
+                                                <input type="text" class="form-control" id="supervisorID" readonly="readonly" placeholder="@Model.SupervisorID">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="url">Supervisor Name:</label>
+                                                <input type="text" class="form-control" id="supervisorName" readonly="readonly" placeholder="@Model.SupervisorName">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="email">Supervisor Email:</label>
+                                                <input type="text" class="form-control" id="supervisorEmail" readonly="readonly" placeholder="@Model.SupervisorEmail">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="url">Approved Days:</label>
+                                                <input type="number" class="form-control" id="url" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-header p-3">
+                                        <ul class="nav nav-pills">
+                                            <li class="nav-item"><a class="nav-link active" href="#nok" data-toggle="tab">Leave Statistics</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--  row   -->
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">Total Leave Days:</label>
+                                            <input type="text" class="form-control" id="url" readonly="readonly" placeholder="@Model.LeaveDays">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">Total leave Taken:</label>
+                                            <input type="text" class="form-control" id="url" readonly="readonly" placeholder="@Model.leaveTaken">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="email">Leave Balance:</label>
+                                            <input type="text" class="form-control" id="email" readonly="readonly" placeholder="@Model.LeaveBalance">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="url">Application Date:</label>
+                                            @Html.EditorFor(model => model.applicationDate, new { htmlAttributes = new { @class = "form-control", type = "text",@readonly="readonly" } })
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card-header p-2">
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item"><a class="nav-link active" href="#nok" data-toggle="tab">Reliever Details</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- row -->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="url">Reliever Name:</label>
+                                            @Html.DropDownListFor(x => Model.RelieverName, new SelectList(Model.employees, "Text"), htmlAttributes: new { @class = "form-control", onChange= "RelieverNameOnChangeEvent()" })
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="url">Reliever Code:</label>
+                                            @*<input type="text" class="form-control" id="RelieverCode"  readonly="readonly" placeholder="@Model.RelieverCode">*@
+                                            @Html.EditorFor(model => model.RelieverCode, new { htmlAttributes = new { @class = "form-control", type = "text", @readonly = "readonly" } })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="url">Status:</label>
+                                            @Html.EditorFor(model => model.status, new { htmlAttributes = new { @class = "form-control", type = "text", value = "NEW", @readonly = "readonly" } })
+                                            @*<input type="text" class="form-control" id="status"  readonly="readonly" placeholder="NEW">*@
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!--  row   -->
+                                <br />
+                                <button type="submit" class="btn btn-primary" onclick="LeaveSubmit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="nok">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+<script>
+
+    function UpdateDateOnChangeEvent() {
+        ReturnDateOnChangeEvent();
+        EndDateOnChangeEvent();
+    }
+
+    function ReturnDateOnChangeEvent() {
+        console.log("Start");
+        $.ajax(
+        {
+            url: '/Leave/GetReturnDate?startdate=' + $("#startDate").val() + ' &leavedays=' + $("#daysApplied").val(),
+            type: 'GET',
+            data: "",
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                console.log(data);
+                $("#returnDate").val(data);
+
+            },
+            error: function () {
+                console.log("Error");
+                alert("error");
+            }
+        });
+    }
+    function EndDateOnChangeEvent() {
+        $.ajax(
+        {
+            url: '/Leave/GetEndDate?startdate=' + $("#startDate").val() + ' &leavedays=' + $("#daysApplied").val(),
+            type: 'GET',
+            data: "",
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                console.log(data);
+                $("#endDate").val(data);
+            },
+            error: function () {
+                //console.log("Error");
+                alert("error");
+            }
+        });
+    }
+
+    function RelieverNameOnChangeEvent() {
+        console.log("Start");
+        $.ajax(
+        {
+            url: '/Leave/GetRelieverCode?relieverName=' + $("#RelieverName").val(),
+            type: 'GET',
+            data: "",
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                console.log(data);
+                $("#RelieverCode").val(data);
+            },
+            error: function () {
+                console.log("Error");
+                alert("error");
+            }
+        });
+    }
+    function LeaveSubmit() {
+        if (confirm('Are you sure you want to submit this Leave ?')) {
+            $.ajax(
+            {
+                url: '/Leave/LeaveApplication?employeeNo=' + $("#employeeNo").val() + ' &FullName=' + $("#FullName").val() + ' &leaveType=' + $("#leaveTypes").val() + ' &daysApplied=' + $("#leaveDays").val() + ' &startDate=' + $("#startDate").val() + ' &returnDate=' + $("#returnDate").val() + ' &applicationDate=' + $("#applicationDate").val() + ' &status=' + $("#status").val() + ' &userID=' + $("#userID").val() + ' &applicantComments=Test &responsibilityCenter= &request_Leave_Allowance=' + $("#leaveAllowance").val() + ' &RelieverCode=' + $("#RelieverCode").val() + ' &RelieverName=' + $("#RelieverName").val(),
+                type: 'POST',
+                data: "",
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    alert("Leave Submited Successful");
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+    }
+
+</script>

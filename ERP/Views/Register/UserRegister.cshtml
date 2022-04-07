@@ -1,0 +1,90 @@
+﻿@model KFCPortal.Models.StaffRegistration
+
+@{
+    ViewBag.Title = "UserRegister";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <div class="text-center">
+                    <img class="profile-user-img img-fluid img-circle" src="https://ladima.africa/wp-content/uploads/2020/07/Kenya-Film-Commission.jpg" alt="User profile picture">
+                </div>
+                <div class="login-logo" style="color: black">
+                    <a><h4>KENYA FILM COMMISSION</h4></a>
+                    <h4>User Registration</h4>
+                </div>
+
+                <form id="loginForm">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        <div class="col-md-15">
+                            @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Staff Email" } })
+                            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-15">
+                            @Html.EditorFor(model => model.userID, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "User ID" } })
+                            @Html.ValidationMessageFor(model => model.userID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-15">
+                            @Html.EditorFor(model => model.IDNumber, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "ID Number" } })
+                            @Html.ValidationMessageFor(model => model.IDNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <button class="btn btn-info form-control" type="submit" data-toggle="modal" data-target="#logoutModal"><i class="glyphicon glyphicon-log-in"></i> Submit</button>
+                    </div>
+                    <div style="float:left">
+                        <p>Already have an Account?  @Html.ActionLink("Login", "Login")</p>
+                    </div>
+</div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><strong>Registration Was Successfull!!</strong></h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Check your email for a StartKey</div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" href="@Url.Action("", "")">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+<script>
+    $(function() {
+           var r = '@TempData["message"]';
+           if (r.length>0)
+           {
+                $('#myModal').modal('show');
+           }
+        });
+</script>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+

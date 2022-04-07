@@ -1,0 +1,66 @@
+﻿@model KFCPortal.Models.Login
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+@using (Html.BeginForm("set", "Settings", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <div class="card-header">
+                    <h3 class="card-title">Account control settings</h3>
+                </div>
+                <div class="login-logo" style="color: black">
+
+                    <h4><strong>Change Password</strong></h4>
+                </div>
+
+                <form id="loginForm">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+
+                        <div class="col-md-15">
+                            <label for="oldpassword">Old password</label>
+                            <input type="text" class="form-control" id="oldpassword" name="username" placeholder="Old password">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="col-md-15">
+                            <label for="exampleInputPassword1">New Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+                         </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="col-md-15">
+                            <label for="exampleInputPassword3">Confirm  password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword3" name="passconfirm" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-success form-control col-md-5" type="submit"><i class="glyphicon glyphicon-log-in"></i> Save</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+

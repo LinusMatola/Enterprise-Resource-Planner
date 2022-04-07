@@ -1,0 +1,70 @@
+﻿@model KFCPortal.Models.myApplicationsDetails
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+<br />
+@Html.AntiForgeryToken()
+<div class="tab-pane" id="nok">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <button type="button" class="btn btn-success">My Applications</button>
+                        <table class="table table-centered table-nowrap" id="show" method="post">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Document No</th>
+                                    <th>Document Type</th>
+                                    <th>Approver ID</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@*}*@
+<script>
+        //console.log('Get Open Applications Test');
+        document.addEventListener('DOMContentLoaded', (event) => {
+            LoadApprovals();
+        });
+
+        function LoadApprovals() {
+            //the event occurred
+            $.ajax(
+            {
+                url: '/MyApplications/GetOpenApplications',
+                type: 'GET',
+                data: "",
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    console.log(data.ApprovalList);
+                    $.each(data.ApprovalList, function (index, value) {
+                        var $tbody = $('tbody');
+                        console.log(index);
+                        $tr = $('<tr id="row' + index + '"></tr>');
+                        $tr.append('<td>' + value.DocumentNo + '&nbsp;</td>');
+                        $tr.append('<td>' + value.DocumentType + '&nbsp;</td>');
+                        $tr.append('<td>' + value.SenderID + '&nbsp;</td>');
+                        $tr.append('<td>' + value.DueDate + '&nbsp;</td>');
+                        $tr.append('<td>' + value.Amount + '&nbsp;</td>');
+                        $tbody.append($tr);
+                        index++;
+                    });
+                },
+                error: function () {
+                    console.log("Error");
+                    alert("error");
+                }
+            });
+        }
+</script>

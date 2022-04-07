@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="KENYA_FILM_COMMISSION_Vendor">
+    <Key>
+      <PropertyRef Name="No_" />
+    </Key>
+    <Property Name="timestamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="No_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Search_Name" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="85" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address_2" Type="String" MaxLength="85" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone_No_" Type="String" MaxLength="55" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telex_No_" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Our_Account_No_" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Territory_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Global_Dimension_1_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Global_Dimension_2_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Budgeted_Amount" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Vendor_Posting_Group" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Currency_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Language_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Statistics_Group" Type="Int32" Nullable="false" />
+    <Property Name="Payment_Terms_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fin__Charge_Terms_Code" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Purchaser_Code" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Shipment_Method_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Shipping_Agent_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Invoice_Disc__Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Country_Region_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Blocked" Type="Int32" Nullable="false" />
+    <Property Name="Pay_to_Vendor_No_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Priority" Type="Int32" Nullable="false" />
+    <Property Name="Payment_Method_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Last_Modified_Date_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Last_Date_Modified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Application_Method" Type="Int32" Nullable="false" />
+    <Property Name="Prices_Including_VAT" Type="Byte" Nullable="false" />
+    <Property Name="Fax_No_" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telex_Answer_Back" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VAT_Registration_No_" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gen__Bus__Posting_Group" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Picture" Type="Guid" Nullable="false" />
+    <Property Name="GLN" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Post_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="County" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="E_Mail" Type="String" MaxLength="85" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Home_Page" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="No__Series" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tax_Area_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tax_Liable" Type="Byte" Nullable="false" />
+    <Property Name="VAT_Bus__Posting_Group" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Block_Payment_Tolerance" Type="Byte" Nullable="false" />
+    <Property Name="IC_Partner_Code" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prepayment__" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Partner_Type" Type="Int32" Nullable="false" />
+    <Property Name="Image" Type="Guid" Nullable="false" />
+    <Property Name="Privacy_Blocked" Type="Byte" Nullable="false" />
+    <Property Name="Creditor_No_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Preferred_Bank_Account_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cash_Flow_Payment_Terms_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Primary_Contact_No_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Responsibility_Center" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Location_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lead_Time_Calculation" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Base_Calendar_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Document_Sending_Profile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Validate_EU_Vat_Reg__No_" Type="Byte" Nullable="false" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Currency_Id" Type="Guid" Nullable="false" />
+    <Property Name="Payment_Terms_Id" Type="Guid" Nullable="false" />
+    <Property Name="Payment_Method_Id" Type="Guid" Nullable="false" />
+    <Property Name="Tes" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Creditor_Type" Type="Int32" Nullable="false" />
+    <Property Name="Personal_No_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_No_" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Last_Maintenance_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Activate_Sweeping_Arrangement" Type="Byte" Nullable="false" />
+    <Property Name="Sweeping_Balance" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Sweep_To_Account" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fixed_Deposit_Status" Type="Int32" Nullable="false" />
+    <Property Name="Call_Deposit" Type="Byte" Nullable="false" />
+    <Property Name="Mobile_Phone_No" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Marital_Status" Type="Int32" Nullable="false" />
+    <Property Name="Registration_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BOSA_Account_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Signature" Type="Guid" Nullable="false" />
+    <Property Name="Passport_No_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Employer_Code" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Account_Type" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Account_Category" Type="Int32" Nullable="false" />
+    <Property Name="FD_Marked_for_Closure" Type="Byte" Nullable="false" />
+    <Property Name="Last_Withdrawal_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Last_Overdraft_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Last_Min__Balance_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Last_Deposit_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Last_Transaction_Posting_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Date_Closed" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Expected_Maturity_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Date_of_Birth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="E_Mail__Personal_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Section" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Card_No_" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Home_Address" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sub_Location" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="District" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Resons_for_Status_Change" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Closure_Notice_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fixed_Deposit_Type" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FD_Maturity_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Savings_Account_No_" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Old_Account_No_" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Salary_Processing" Type="Byte" Nullable="false" />
+    <Property Name="Amount_to_Transfer" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Proffesion" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Signing_Instructions" Type="Int32" Nullable="false" />
+    <Property Name="Hide" Type="Byte" Nullable="false" />
+    <Property Name="Monthly_Contribution" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Not_Qualify_for_Interest" Type="Byte" Nullable="false" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="Fixed_Duration" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="System_Created" Type="Byte" Nullable="false" />
+    <Property Name="External_Account_No" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Bank_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Enabled" Type="Byte" Nullable="false" />
+    <Property Name="Defaulted_Loans_Recovered" Type="Byte" Nullable="false" />
+    <Property Name="Formation_Province" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Division_Department" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Station_Sections" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Neg__Interest_Rate" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Date_Renewed" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Last_Interest_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Don_t_Transfer_to_Savings" Type="Byte" Nullable="false" />
+    <Property Name="Type_Of_Organisation" Type="Int32" Nullable="false" />
+    <Property Name="Source_Of_Funds" Type="Int32" Nullable="false" />
+    <Property Name="S_Mobile_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ATM_Prov__No" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ATM_Approve" Type="Byte" Nullable="false" />
+    <Property Name="Force_No_" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Card_Expiry_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Card_Valid_From" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Card_Valid_To" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Service" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Reconciled" Type="Byte" Nullable="false" />
+    <Property Name="FD_Duration" Type="Int32" Nullable="false" />
+    <Property Name="Employer_P_F" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Outstanding_Balance" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Atm_card_ready" Type="Byte" Nullable="false" />
+    <Property Name="Current_Shares" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Debtor_Type" Type="Int32" Nullable="false" />
+    <Property Name="Group_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Group_Account" Type="Byte" Nullable="false" />
+    <Property Name="Shares_Recovered" Type="Byte" Nullable="false" />
+    <Property Name="Group_Balance" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Old_Bosa_Acc_no" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeDelete" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactPerson_Occupation" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContacPerson_Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClassB_Shares" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Date_ATM_Linked" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ATM_No_" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Reason_For_Blocking_Account" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Transfer_Amount_to_Savings" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Notice_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Account_Frozen" Type="Byte" Nullable="false" />
+    <Property Name="Interest_rate" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Fixed_duration2" Type="Int32" Nullable="false" />
+    <Property Name="FDR_Deposit_Status_Type" Type="Int32" Nullable="false" />
+    <Property Name="ATM_Expiry_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ATM_Issued" Type="Byte" Nullable="false" />
+    <Property Name="ATM_Self_Picked" Type="Byte" Nullable="false" />
+    <Property Name="ATM_Collector_Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ATM_Collector_s_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ATM_Collector_s_Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Test" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cheque_Acc__No" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Home_Postal_Code" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Postal_Code_2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Town_2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Passport_2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Member_Parish_2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Member_Parish_Name_2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name_of_the_Group_Corporate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date_of_Registration" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="No_of_Members" Type="Int32" Nullable="false" />
+    <Property Name="Group_Corporate_Trade" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Certificate_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_No_2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Picture_2" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Signature__2" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Title2" Type="Int32" Nullable="false" />
+    <Property Name="Mobile_No__3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date_of_Birth2" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Marital_Status2" Type="Int32" Nullable="false" />
+    <Property Name="Gender2" Type="Int32" Nullable="false" />
+    <Property Name="Address3_Joint" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Home_Postal_Code2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Home_Town2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Payroll_Staff_No2" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Employer_Code2" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Employer_Name2" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="E_Mail__Personal2_" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contact_Person_Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactPerson_Relation" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Recruited_By" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Dioces" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mobile_No__2" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Employer_Name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Title" Type="Int32" Nullable="false" />
+    <Property Name="Town" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Received_1_Copy_Of_ID" Type="Byte" Nullable="false" />
+    <Property Name="Received_1_Copy_Of_Passport" Type="Byte" Nullable="false" />
+    <Property Name="Specimen_Signature" Type="Byte" Nullable="false" />
+    <Property Name="Created" Type="Byte" Nullable="false" />
+    <Property Name="Incomplete_Application" Type="Byte" Nullable="false" />
+    <Property Name="Created_By" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Home_Town" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Copy_of_Current_Payslip" Type="Byte" Nullable="false" />
+    <Property Name="Member_Registration_Fee_Receiv" Type="Byte" Nullable="false" />
+    <Property Name="Copy_of_KRA_Pin" Type="Byte" Nullable="false" />
+    <Property Name="Contact_person_age" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="First_member_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date_Establish" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Registration_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Self_Recruited" Type="Byte" Nullable="false" />
+    <Property Name="Application_Category" Type="Int32" Nullable="false" />
+    <Property Name="Members_Parish" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Parish_Name" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Employment_Info" Type="Int32" Nullable="false" />
+    <Property Name="Contracting_Details" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Others_Details" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contact_Person" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Office_Telephone_No_" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extension_No_" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="On_Term_Deposit_Maturity" Type="Int32" Nullable="false" />
+    <Property Name="Member_s_Residence" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Joint_Account_Name" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Postal_Code_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Town_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Passport_3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Member_Parish_3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Member_Parish_Name_3" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Picture_3" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Signature__3" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Title3" Type="Int32" Nullable="false" />
+    <Property Name="Mobile_No__3_Joint" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date_of_Birth3" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Marital_Status3" Type="Int32" Nullable="false" />
+    <Property Name="Gender3" Type="Int32" Nullable="false" />
+    <Property Name="Address3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Home_Postal_Code3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Home_Town3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Payroll_Staff_No3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Employer_Code3" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Employer_Name3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="E_Mail__Personal3_" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_No_3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mobile_No__4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address4" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Expected_Interest_On_Term_Dep" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Allowable_Cheque_Discounting__" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Cheque_Discounted" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Staff_Account" Type="Byte" Nullable="false" />
+    <Property Name="Debt_Collector" Type="Byte" Nullable="false" />
+    <Property Name="Debt_Collector__" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Comission_On_Cheque_Discount" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Fixed_Deposit_Start_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Prevous_Fixed_Deposit_Type" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prevous_FD_Start_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Prevous_Fixed_Duration" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prevous_Expected_Int_On_FD" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Prevous_FD_Maturity_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Prevous_FD_Deposit_Status_Type" Type="Int32" Nullable="false" />
+    <Property Name="Prevous_Interest_Rate_FD" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Last_Salary_Earned" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Reason_for_Freezing_Account" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Account_Frozen_By" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fixed_Deposit_Certificate_No_" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="E_Loan_Qualification_Amount" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Pension_No" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Doublicate_Accounts" Type="Byte" Nullable="false" />
+    <Property Name="Assigned_System_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prevous_Blocked_Status" Type="Int32" Nullable="false" />
+    <Property Name="Sacco_No" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Account_Special_Instructions" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Bulk_Withdrawal_Appl_Done" Type="Byte" Nullable="false" />
+    <Property Name="Bulk_Withdrawal_Appl_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Bulk_Withdrawal_Appl_Amount" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Bulk_Withdrawal_Fee" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Bulk_Withdrawal_App_Done_By" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Bulk_Withdrawal_App_Date_For_W" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Referee_Member_No" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Referee_Name" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Referee_ID_No" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Referee_Mobile_Phone_No" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email_Indemnified" Type="Byte" Nullable="false" />
+    <Property Name="Send_E_Statements" Type="Byte" Nullable="false" />
+    <Property Name="Sacco_Lawyer" Type="Byte" Nullable="false" />
+    <Property Name="ATM_Withdrawal_Limit" Type="Decimal" Precision="38" Scale="20" Nullable="false" />
+    <Property Name="Cheque_Clearing_No" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Salary_Processing_Account" Type="Byte" Nullable="false" />
+    <Property Name="Bank_Account_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Supplier_Category" Type="Int32" Nullable="false" />
+    <Property Name="Certificate_of_Incoperation" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AGPO_Cert_No" Type="String" MaxLength="43" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Category_Name" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Directors" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="65" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tax_Compliance_No" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type_of_Job" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Job_Name" Type="String" MaxLength="126" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Bank_Branch_Code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Bank_A_C_No" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="KFC_DBEntitiesNew" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="KENYA_FILM_COMMISSION_Vendor" EntityType="Self.KENYA_FILM_COMMISSION_Vendor" />
+  </EntityContainer>
+</Schema>

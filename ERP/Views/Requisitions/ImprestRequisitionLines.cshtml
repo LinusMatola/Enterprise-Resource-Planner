@@ -1,0 +1,129 @@
+﻿@model KFCPortal.Models.imprest
+<div class="card-header p-2">
+    <ul class="nav nav-pills">
+         <h3>Imprest Details</h3>
+    </ul>
+</div>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="activity">
+        <form class="form-horizontal">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="url">Account Name</label>
+                        @Html.DropDownListFor(x => Model.GLAccountName, new SelectList(Model.AllPaymentTypes, "Text"), htmlAttributes: new { @class = "form-control", onChange = "GLAccountNumberOnChangeEvent()" })
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="last">Account Number</label>
+                        @Html.EditorFor(model => model.GLAccountNo, new { htmlAttributes = new { @class = "form-control", type = "text", @readonly = "readonly" } })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="email">Amount</label>
+                        <input type="text" id="amount" class="form-control" placeholder="0.0" id="accountType" value="0.0">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="url">Description</label>
+                        <input type="text" class="form-control" id="description" placeholder="">
+                    </div>
+                </div>
+                <button type="button" id="addLine" class="btn btn-success" onclick="addImprestLine()">Add Lines</button>
+
+                @*<div class="col-md-4">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>*@
+
+            </div>
+
+            <!-- row -->
+            <div class="row">
+            </div>
+
+
+
+            <!--  row   -->
+            <!--  row   -->
+            @*<div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="url">Memo Attached</label>
+                            <input type="checkbox" class="form-control" id="url" placeholder="">
+                        </div>
+                    </div>
+                </div>*@
+            <br />
+
+        </form>
+    </div>
+</div>
+<div class="tab-pane" id="nok">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-centered table-nowrap" id="example" method="post">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Account No</th>
+                                    <th>Account Type</th>
+                                    <th>Account Name</th>
+                                    <th>Amount</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<button type="submit" class="btn btn-danger">Send Approval Request</button>
+
+<!-- /.tab-pane -->
+<script>
+    function addImprestLine() {
+        var t = $('#example').DataTable;
+        var counter = 1;
+        var GLAccountNo = $(".GLAccountNo").val();
+        var GLAccountName = $(".GLAccountName").val();
+        var amount = $(".amount").val();
+        var description = $(".description").val();
+
+        t.row.add([GLAccountNo,
+                        'Imprest',
+                        GLAccountName,
+                        amount,
+                        description
+                
+            ]).draw(false);
+            counter++;
+            // Automatically add a first row of data
+            $('#addLine').click();
+    }
+</script>
